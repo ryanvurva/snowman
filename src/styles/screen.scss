@@ -73,3 +73,15 @@ footer {
 .letter-button:disabled {
   opacity: 0.33;
 }
+
+button {
+  font-family: 'Futura', 'Trebuchet MS', sans-serif;
+  font-size: 0.8em;
+  // width: 2em;
+  // height: 2em;
+  text-align: center;
+  text-transform: uppercase;
+  background-color: hsl(220, 75%, 80%);
+  border: 2px solid hsl(220, 75%, 50%);
+  margin: 2em 0.2em;
+}
