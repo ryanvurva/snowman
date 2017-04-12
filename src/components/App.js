@@ -4,6 +4,7 @@ import LetterButton from './LetterButton'
 import Snowman from './Snowman'
 import Word from './Word'
 import Reset from './Reset'
+// import Music from './Music'
 
 // ALPHABET is an array of 26 letters, 'a' through 'z', i.e. ['a', 'b', 'c', ...'z']
 const ALPHABET = _.range(26).map(i => String.fromCharCode(i + 97))
@@ -43,12 +44,13 @@ class App extends Component {
     })
     return <div className='app'>
       <main>
-        <Snowman step={this.points} size={400} />
+        <div className='upper'><Snowman step={this.points} size={400} /></div>
         <Word value={this.state.word} guesses={this.state.guesses} />
         <div className='keyboard'>
           {letter}
         </div>
         <Reset reset={this.reset} />
+        {/* <Music /> */}
       </main>
       <footer>It's like hangman, but, um... backwards or something.</footer>
     </div>

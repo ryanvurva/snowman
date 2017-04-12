@@ -11,6 +11,7 @@ body {
   font: $base-text-size / 1 $base-font-family;
   color: hsl(220, 75%, 30%);
   margin: 0;
+  background-image: url('./images/snow.jpg');
 }
 
 body,
@@ -30,6 +31,13 @@ main {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+}
+
+.upper {
+  width: 100%;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
 }
 
 footer {
@@ -56,6 +64,7 @@ footer {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  width: 600px;
 }
 
 .letter-button {
@@ -68,20 +77,90 @@ footer {
   background-color: hsl(220, 75%, 80%);
   border: 2px solid hsl(220, 75%, 50%);
   margin: 0.2em;
+  // transition: jiggle 500ms ease;
+  box-shadow: 2px 2px 4px hsla(0, 0%, 0%, 0.5);
 }
 
-.letter-button:disabled {
-  opacity: 0.33;
+.jiggle {
+  transition: jiggle 500ms ease;
+
+  &:hover {
+    -webkit-animation: jiggle 0.2s infinite;
+    -moz-animation-duration: 0.2s;
+    -moz-animation-name: jiggle;
+    -moz-animation-iteration-count: infinite;
+    -webkit-transform: rotate(-3deg);
+    -moz-transform: rotate(-3deg);
+  }
 }
 
-button {
-  font-family: 'Futura', 'Trebuchet MS', sans-serif;
-  font-size: 0.8em;
-  // width: 2em;
-  // height: 2em;
-  text-align: center;
-  text-transform: uppercase;
+.letter-button:disabled:hover {
+  opacity: 0.5;
+}
+
+.victory {
+  width: 100px;
+  height: 30px;
   background-color: hsl(220, 75%, 80%);
   border: 2px solid hsl(220, 75%, 50%);
   margin: 2em 0.2em;
+  transition: all 300ms ease;
+  box-shadow: 2px 2px 4px hsla(0, 0%, 0%, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+
+
+  &:focus {
+    outline: none;
+    border-color: hsl(220, 75%, 50%);
+  }
+
+  &:hover {
+    transform: translate(-1px, -1px) scale(1.1);
+    box-shadow: 8px 8px 15px hsla(0, 0%, 0%, 0.5);
+  }
+
+  &.victory:active {
+    transform: translate(1px, 1px);
+    box-shadow: 0 0 0.1em hsla(0, 0%, 0%, 0.5);
+  }
+}
+
+.reset {
+  background-color: transparent;
+  border: 0px solid transparent;
+  font-family: 'Futura', 'Trebuchet MS', sans-serif;
+  font-size: 0.8em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+@-moz-keyframes jiggle {
+    0% {
+        -moz-transform: rotate(-1deg);
+    }
+    50% {
+        -moz-transform: rotate(1deg);
+    }
+}
+
+@-webkit-keyframes jiggle {
+    0% {
+        -webkit-transform: rotate(-1deg);
+        }
+    50% {
+        -webkit-transform: rotate(1deg);
+    }
+}
+
+@media only screen and (max-width: 550px) {
+  .keyboard {
+    width: 90%;
+  }
+
+  .word {
+    font-size: 4em;
+  }
 }

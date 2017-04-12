@@ -10,7 +10,7 @@ class LetterButton extends Component {
 
   render () {
     return <button
-      className='letter-button'
+      className={['letter-button', 'jiggle'].join(' ')}
       onClick={this.props.onChoose}
       disabled={this.props.disabled}>
       {this.props.value}

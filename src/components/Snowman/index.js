@@ -116,7 +116,6 @@ class Snowman extends Component {
   }
 
   stepTo (to, from) {
-    console.log(from, to)
     if (this.animation && this.animation.state) {
       if (to > from) {
         _.rangeRight(to, from, -1).forEach((step) => {
